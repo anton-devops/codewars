@@ -1,14 +1,12 @@
 import codewars_test as test
-from solution import to_camel_case
+from solution import string_to_number
 
 
-@test.describe("Sample Tests")
-def sample_tests():
-    @test.it("Tests")
-    def _():
-        test.assert_equals(to_camel_case(""), "", "An empty string was provided but not returned")
-        test.assert_equals(to_camel_case("the_stealth_warrior"), "theStealthWarrior",
-                           "to_camel_case('the_stealth_warrior') did not return correct value")
-        test.assert_equals(to_camel_case("The-Stealth-Warrior"), "TheStealthWarrior",
-                           "to_camel_case('The-Stealth-Warrior') did not return correct value")
-        test.assert_equals(to_camel_case("A-B-C"), "ABC", "to_camel_case('A-B-C') did not return correct value")
+@test.describe("string_to_number")
+def basic_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(string_to_number("1234"), 1234)
+        test.assert_equals(string_to_number("605"), 605)
+        test.assert_equals(string_to_number("1405"), 1405)
+        test.assert_equals(string_to_number("-7"), -7)
